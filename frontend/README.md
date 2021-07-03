@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Conceitos React:
+    Componentização -> É a estruturação em que nós organizamos os compomentes para serem reaproveitados.
+    Props           -> É a estruturação dos compomentes para poderem receber parâmetros dinamicamente.
+    State           -> É a organização que irá controlar a mundança de estado de um componente. 
+    Ciclo de vida   -> É a organização que irá controlar quando será renderalizado um compomente.
