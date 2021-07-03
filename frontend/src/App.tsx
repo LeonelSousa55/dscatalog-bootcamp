@@ -1,8 +1,15 @@
-import React from "react";
+import Alert from "./ExemplePropsAlert";
+
 
 const App = () => {
-
-    return <h1>Hello App</h1>
+    return (
+        <div className="container mt-5">
+            <Alert text="Leonel" />
+            <Alert text="Leonel" />
+            <Alert />
+            <Alert />
+        </div>
+    )
 }
 
 export default App;
