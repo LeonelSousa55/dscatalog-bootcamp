@@ -48,7 +48,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Leonel
 
 ### `Conceitos React`
-**Componentização -> É a estruturação em que nós organizamos os compomentes para serem reaproveitados.**\
-**Props           -> É a estruturação dos compomentes para poderem receber parâmetros dinamicamente.**\
-**State           -> É a organização que irá controlar a mundança de estado de um componente.**\
-**Ciclo de vida   -> É a organização que irá controlar quando será renderalizado um compomente.**\
+**Componentização: É a estruturação em que nós organizamos os compomentes para serem reaproveitados.**\
+**Props: É a estruturação dos compomentes para poderem receber parâmetros dinamicamente.**\
+**State: É a organização que irá controlar a mundança de estado de um componente.**\
+**Ciclo de vida: É a organização que irá controlar quando será renderalizado um compomente.**
