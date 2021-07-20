@@ -10,6 +10,7 @@
   border-radius: 20px;
   padding-top: 155px;
   padding-left: 100px;
+  padding-bottom: 155px;
 }
 
 .text-title {
@@ -24,8 +25,13 @@
   letter-spacing: -0.015em;
   color: #9e9e9e;
   margin-top: 30px;
+  margin-bottom: 150px;
 }
 
-.main-image{
-    width: 100%;
+.main-image {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
