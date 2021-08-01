@@ -1,3 +1,4 @@
+import ProductCard from './components/ProductCard';
 import './styles.scss';
 
 const Catalog = () => (
@@ -6,7 +7,15 @@ const Catalog = () => (
             Catálog de produtos
         </h1>
         <div className="catalog-products">
-           
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
         </div>
     </div>
 );
