@@ -1,18 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './components/ProductCard';
+import { makeRequest } from '../../utils/request';
+import { ProductsResponse } from '../../types/Product';
 import './styles.scss';
 
 const Catalog = () => {
+    /*
+    //Trabalhando com Fetch
     //Quando o componente iniciar, buscar a lista de produtos.
-
-    //Quando a lista de produtos estiver disponível,
-    //polular um estado do componente, e listar os produtos dinamicamente
-
     useEffect(() => {
+        //Limitações Fetch
+        //Ele é muito verboso
+        //Não tem suporte nativo para ler a barra de progresso de upload de arquivo
+        //Não tem suporte nativo para enviar uma query string
         fetch('http://localhost:3000/products')
             .then(response => response.json())
             .then(response => console.log(response));
+    }, []);
+    */
+
+    //Quando a lista de produtos estiver disponível,
+    //Polular um estado do componente, e listar os produtos dinamicamente
+    const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
+    console.log(productsResponse);
+
+    //Trabalhando com Axios
+    //Somente quando o componenten iniciar, buscar a lista de produtos.
+    useEffect(() => {
+        const params = {
+            page: 0,
+            linesPerPage: 12
+        }
+        makeRequest({ url: '/products', params }).then(response => setProductsResponse(response.data));
     }, []);
 
     return (
@@ -21,15 +41,11 @@ const Catalog = () => {
                 Catálog de produtos
             </h1>
             <div className="catalog-products">
-                <Link to="/products/1"><ProductCard /></Link>
-                <Link to="/products/2"><ProductCard /></Link>
-                <Link to="/products/3"><ProductCard /></Link>
-                <Link to="/products/4"><ProductCard /></Link>
-                <Link to="/products/5"><ProductCard /></Link>
-                <Link to="/products/6"><ProductCard /></Link>
-                <Link to="/products/7"><ProductCard /></Link>
-                <Link to="/products/8"><ProductCard /></Link>
-                <Link to="/products/9"><ProductCard /></Link>
+                {productsResponse?.content.map(product => (
+                    <Link to="/products/1" key={product.id}>
+                        <ProductCard />
+                    </Link>
+                ))}
             </div>
         </div>
     );
