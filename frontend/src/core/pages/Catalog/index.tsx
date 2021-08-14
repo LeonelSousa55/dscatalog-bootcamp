@@ -23,7 +23,6 @@ const Catalog = () => {
     //Quando a lista de produtos estiver disponível,
     //Polular um estado do componente, e listar os produtos dinamicamente
     const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
-    console.log(productsResponse);
 
     //Trabalhando com Axios
     //Somente quando o componenten iniciar, buscar a lista de produtos.
@@ -42,8 +41,8 @@ const Catalog = () => {
             </h1>
             <div className="catalog-products">
                 {productsResponse?.content.map(product => (
-                    <Link to="/products/1" key={product.id}>
-                        <ProductCard product={product}/>
+                    <Link to={`/products/${product.id}`} key={product.id}>
+                        <ProductCard product={product} />
                     </Link>
                 ))}
             </div>
