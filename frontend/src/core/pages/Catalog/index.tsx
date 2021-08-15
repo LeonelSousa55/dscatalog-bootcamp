@@ -4,6 +4,7 @@ import ProductCard from './components/ProductCard';
 import { makeRequest } from '../../utils/request';
 import { ProductsResponse } from '../../types/Product';
 import './styles.scss';
+import ProductCardLoader from './components/Loaders/ProductCardLoader';
 
 const Catalog = () => {
     /*
@@ -23,6 +24,8 @@ const Catalog = () => {
     //Quando a lista de produtos estiver disponível,
     //Polular um estado do componente, e listar os produtos dinamicamente
     const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
+    //Trabalhando com o loader dos componentes
+    const [isLoading, setIsLoading] = useState(false);
 
     //Trabalhando com Axios
     //Somente quando o componenten iniciar, buscar a lista de produtos.
@@ -31,7 +34,14 @@ const Catalog = () => {
             page: 0,
             linesPerPage: 12
         }
-        makeRequest({ url: '/products', params }).then(response => setProductsResponse(response.data));
+        //Iniciar o loader
+        setIsLoading(true);
+        makeRequest({ url: '/products', params })
+            .then(response => setProductsResponse(response.data))
+            .finally(() => {
+                //Finalizar o loader
+                setIsLoading(false);
+            })
     }, []);
 
     return (
@@ -40,11 +50,13 @@ const Catalog = () => {
                 Catálog de produtos
             </h1>
             <div className="catalog-products">
-                {productsResponse?.content.map(product => (
-                    <Link to={`/products/${product.id}`} key={product.id}>
-                        <ProductCard product={product} />
-                    </Link>
-                ))}
+                {isLoading ? <ProductCardLoader /> : (
+                    productsResponse?.content.map(product => (
+                        <Link to={`/products/${product.id}`} key={product.id}>
+                            <ProductCard product={product} />
+                        </Link>
+                    ))
+                )}
             </div>
         </div>
     );
