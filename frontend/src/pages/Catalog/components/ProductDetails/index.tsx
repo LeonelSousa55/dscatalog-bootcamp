@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ReactComponent as ArrowIcon } from '../../../../assets/images/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../../../../core/assets/images/arrow.svg';
 import ProductPrice from '../ProductPrice';
-import { Product } from '../../../../types/Product';
-import { makeRequest } from '../../../../utils/request';
+import { Product } from '../../../../core/types/Product';
+import { makeRequest } from '../../../../core/utils/request';
 import ProductInfoLoader from '../Loaders/ProductInfoLoader';
 import './styles.scss';
 import ProductDescriptionLoader from '../Loaders/ProductDescriptionLoader';
@@ -16,8 +16,6 @@ const ProductDetails = () => {
     const { productId } = useParams<ParamsType>();
     const [product, setProduct] = useState<Product>();
     const [isLoading, setIsLoading] = useState(false);
-
-    console.log(isLoading);
 
     useEffect(() => {
         setIsLoading(true);
