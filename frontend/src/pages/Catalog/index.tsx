@@ -27,12 +27,14 @@ const Catalog = () => {
     const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
     //Trabalhando com o loader dos componentes
     const [isLoading, setIsLoading] = useState(false);
+    //Representar se a página está ativa
+    const [activePage, setActivePage] = useState(0);
 
     //Trabalhando com Axios
     //Somente quando o componenten iniciar, buscar a lista de produtos.
     useEffect(() => {
         const params = {
-            page: 0,
+            page: activePage,
             linesPerPage: 12
         }
         //Iniciar o loader
@@ -43,7 +45,7 @@ const Catalog = () => {
                 //Finalizar o loader
                 setIsLoading(false);
             })
-    }, []);
+    }, [activePage]);
 
     return (
         <div className="catalog-container">
@@ -59,7 +61,13 @@ const Catalog = () => {
                     ))
                 )}
             </div>
-            <Pagination />
+            {productsResponse && (
+                <Pagination
+                    totalPages={productsResponse.totalPages}
+                    activePage={activePage}
+                    onChange={page => setActivePage(page)}
+                />
+            )}
         </div>
     );
 }
