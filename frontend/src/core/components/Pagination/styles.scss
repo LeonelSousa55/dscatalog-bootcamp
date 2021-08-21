@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
+  //border: 1px solid #000;
   margin-top: 35px;
 }
 
@@ -26,14 +26,20 @@
   }
 }
 .pagination-previous {
-    transform: rotate(-180deg);
-    margin-right: 25px;
-    color: #E1E1E1;
-    cursor: pointer;
+  transform: rotate(-180deg);
+  margin-right: 25px; 
 }
 
-.pagination-next{
-    margin-left: 15px;
-    color: #407BFF;
-    cursor: pointer;
+.pagination-next {
+  margin-left: 15px;
+}
+
+.page-active {  
+  color: #407bff;
+  cursor: pointer;
+}
+
+.page-inactive {
+  color: #e1e1e1;
+  pointer-events: none;
 }
