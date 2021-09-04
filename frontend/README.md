@@ -60,7 +60,7 @@ Instalar o BootsTrap            -> yarn add bootstrap ^5.1.0\
 Instalar o Node-sass            -> yarn add node-sass ^6.0.1\
 Instalar o react-router-dom     -> yarn add react-router-dom ^5.2.0\
 Instalar o react-content-loader -> yarn add react-content-loader ^6.0.3\
-OBS: Esse Node-sass pode dar problemas daí para resolver é esses passos:\
+OBS: O Node-sass pode dar problemas de conflito de versões daí para resolver é esses passos:\
 1ª yarn remove node-sass\
 2ª yarn add node-sass@4.14.1
  
