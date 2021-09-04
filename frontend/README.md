@@ -54,16 +54,15 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 **Ciclo de vida: É a organização que irá controlar quando será renderalizado um compomente.**
 
 Passos: 
-Instalar o NodeJs               -> https://nodejs.org/pt-br/
-Instalar o Yarn                 -> npm install --global yarn
-Instalar o BootsTrap            -> yarn add bootstrap ^5.1.0
-Instalar o Node-sass            -> yarn add node-sass ^6.0.1
-Instalar o react-router-dom     -> yarn add react-router-dom ^5.2.0
-Instalar o react-content-loader -> yarn add react-content-loader ^6.0.3
-
-OBS: Esse Node-sass pode dar problemas daí para resolver é esses passos:
-1ª yarn remove node-sass
-2ª yarn add node-sass@4.14.1
+Instalar o NodeJs               -> https://nodejs.org/pt-br/\
+Instalar o Yarn                 -> npm install --global yarn\
+Instalar o BootsTrap            -> yarn add bootstrap ^5.1.0\
+Instalar o Node-sass            -> yarn add node-sass ^6.0.1\
+Instalar o react-router-dom     -> yarn add react-router-dom ^5.2.0\
+Instalar o react-content-loader -> yarn add react-content-loader ^6.0.3\
+OBS: Esse Node-sass pode dar problemas daí para resolver é esses passos:\
+1ª yarn remove node-sass\
+2ª yarn add node-sass@4.14.1\
  
 
 
